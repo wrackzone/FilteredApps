@@ -13,16 +13,13 @@
     Ext.define('MyAppCard', {
         extend: 'Rally.ui.cardboard.Card',
         alias: 'widget.myappcard',
-        //other stuff here
         afterRender: function() {
             this.callParent(arguments);
-            // this.getEl().hover(this._onCardMouseOver, Ext.emptyFn, this);
-            // this.getEl().click(this._onCardMouseOver, Ext.emptyFn, this);
-            this.getEl().on("click",this._onCardMouseOver, this);
+            this.getEl().on("click",this._onCardClick, this);
         },
 
-        _onCardMouseOver: function() {
-            this.fireEvent('cardhover', this, this.getRecord());
+        _onCardClick: function() {
+            this.fireEvent('cardclick', this, this.getRecord());
         }
     } );
 
@@ -60,7 +57,6 @@
         },
 
         _otherBoardCardClick : function(card) {
-            console.log("OtherBoardCardClick!",card);
             this.filterToParent = card;
             this._addBoard();
         },
@@ -190,9 +186,8 @@
                     cardConfig: {
                         xtype: 'myappcard',
                         listeners: {
-                            'cardhover': {
+                            'cardclick': {
                                  fn: function(a,b,c) {
-                                    console.log("sending click:",b);
                                     that.publish("cardClick",b);
                                  },   
                                  scope: this
@@ -277,8 +272,6 @@
                 });
                 queries.push(filter);
             }
-            console.log("queries",queries);
-
             return queries;
         }
     });
