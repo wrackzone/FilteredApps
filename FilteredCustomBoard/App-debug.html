@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Board</title>
+
+
+    <script type="text/javascript" src="https://rally1.rallydev.com/apps/2.1/sdk-debug.js"></script>
+
+    <script type="text/javascript">
+        Rally.loadScripts(
+                [
+                      "../common/RowSettingsField.js",
+                      "Settings.js",
+                      "BoardApp.js",
+                ],
+        function() {
+            Rally.launchApp('Rally.apps.board.BoardApp', {
+                name:"Custom Board"
+            });
+        }, true);
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="BoardApp.css"/>
+</head>
+<body>
+</body>
+</html>
