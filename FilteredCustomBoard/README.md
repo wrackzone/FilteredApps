@@ -27,11 +27,11 @@ Story / Defect | TestCase | WorkProduct
 
 ### Sender
 
-![screenshot](https://raw.githubusercontent.com/wrackzone/FilteredCustomBoard/master/setttings-send.gif)
+![screenshot](https://github.com/wrackzone/FilteredApps/blob/master/FilteredCustomBoard/settings-send.png?raw=true)
 
 
 ### Receiver
 
-![screenshot](https://raw.githubusercontent.com/wrackzone/FilteredCustomBoard/master/settings-receive.gif)
+![screenshot](https://github.com/wrackzone/FilteredApps/blob/master/FilteredCustomBoard/settings-receive.png?raw=true)
 
 
