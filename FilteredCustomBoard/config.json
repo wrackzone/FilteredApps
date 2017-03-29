@@ -6,7 +6,8 @@
    "javascript": [
       "../common/RowSettingsField.js",
       "Settings.js",
-      "BoardApp.js"
+      "BoardApp.js",
+      "FilteredCard.js"
    ],
    "css": [
       "BoardApp.css"

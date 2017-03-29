@@ -1,27 +1,7 @@
-// config - Events : Send, Receive, None (Default)
-// If sender use custom card which publishes the model of the card that is clicked.
-// If receiver filters board to the children of the received model. 
-// Mapping of types for receiver board
-// Task -> WorkProduct
-// Story -> Feature
-// PortfolioItem -> Parent
-// TestCase -> WorkProduct
 
 (function() {
     var Ext = window.Ext4 || window.Ext;
 
-    Ext.define('MyAppCard', {
-        extend: 'Rally.ui.cardboard.Card',
-        alias: 'widget.myappcard',
-        afterRender: function() {
-            this.callParent(arguments);
-            this.getEl().on("click",this._onCardClick, this);
-        },
-
-        _onCardClick: function() {
-            this.fireEvent('cardclick', this, this.getRecord());
-        }
-    } );
 
     Ext.define('Rally.apps.board.BoardApp', {
         extend: 'Rally.app.App',
@@ -184,11 +164,11 @@
             if (this.getSetting('eventType')=="Send") {
                 Ext.merge(boardConfig, {
                     cardConfig: {
-                        xtype: 'myappcard',
+                        xtype: 'filteredcard',
                         listeners: {
                             'cardclick': {
                                  fn: function(a,b,c) {
-                                    that.publish("cardClick",b);
+                                    this.publish("cardClick",b);
                                  },   
                                  scope: this
                              }
